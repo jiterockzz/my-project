@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logout Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Slide-in animation for the card */
+    .slide-in {
+      animation: slideIn 0.8s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hover effect for button */
+    .btn-logout {
+      position: relative;
+      overflow: hidden;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-logout:hover {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .btn-logout::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      background-color: rgba(0, 0, 0, 0.1);
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.5s ease;
+      border-radius: 50%;
+    }
+
+    .btn-logout:hover::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+  <div class="card p-4 text-center slide-in" style="width: 100%; max-width: 400px;">
+    <h3 class="mb-4">Are you sure you want to log out?</h3>
+    
+    <!-- Logout Button -->
+    <form>
+      <button type="submit" class="btn btn-logout btn-danger btn-block">Logout</button>
+    </form>
+
+    <!-- Additional Links -->
+    <div class="text-center mt-3">
+      <a href="#">Cancel</a>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
